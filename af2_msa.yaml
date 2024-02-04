@@ -1,0 +1,19 @@
+name: af2_msa
+channels:
+  - conda-forge
+  - nvidia
+dependencies:
+  - cudatoolkit
+  - python=3.9
+  - pip
+  - pip:
+      - -r requirements.txt
+  - openmm=7.7.0
+  - pdbfixer
+  - matplotlib
+  - pip:
+    - jax==0.3.25
+    - jaxlib==0.3.25+cuda11.cudnn805
+    - -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+  - cuda-nvcc=11
+
