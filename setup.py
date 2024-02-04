@@ -15,6 +15,10 @@
 
 from setuptools import find_packages, setup
 
+# Read the requirements from requirements.txt
+with open("requirements.txt", "r") as req_file:
+    requirements = req_file.read().splitlines()
+
 setup(
     name="alphafold_msa",
     version="2.3.5",
@@ -28,21 +32,7 @@ setup(
     license="Apache License, Version 2.0",
     url="https://github.com/oteri/alphafold_MSA",
     packages=find_packages(),
-    install_requires=[
-        "absl-py",
-        "biopython",
-        "chex",
-        "dm-haiku",
-        "dm-tree",
-        "docker",
-        "immutabledict",
-        "jax",
-        "ml-collections",
-        "numpy",
-        "pandas",
-        "scipy",
-        "tensorflow-cpu",
-    ],
+    install_requires=requirements,  # Use requirements from requirements.txt
     tests_require=[
         "matplotlib",  # For notebook_utils_test.
         "mock",
